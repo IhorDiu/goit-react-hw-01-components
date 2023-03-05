@@ -1,20 +1,22 @@
-import { Section } from './Section';
+import { Section } from 'components/Section/Section';
 
-import { Profile } from './Profile';
-import user from '../data/user.json';
+import { Profile } from 'components/User/Profile';
+import user from '../../data/user.json';
 
-import { Statistics } from './Statistics';
-import data from '../data/data.json';
+import { Statistics } from 'components/Statistics/Statistics';
+import data from '../../data/data.json';
 
-import { FriendList } from './FriendList';
-import friends from '../data/friends.json';
+import { FriendList } from 'components/Friends/FriendList';
+import friends from '../../data/friends.json';
 
-import { TransactionHistory } from './TransactionHistory';
-import transactions from '../data/transactions.json';
+import { TransactionHistory } from 'components/Transaction/TransactionHistory';
+import transactions from '../../data/transactions.json';
+
+import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <>
+    <Container>
       <Section title="1 - The Social network profile">
         <Profile
           username={user.username}
@@ -35,9 +37,8 @@ export const App = () => {
       </Section>
 
       <Section title="4 - The history of transactions">
-        {' '}
-        <TransactionHistory items={transactions} />
+         <TransactionHistory items={transactions} />
       </Section>
-    </>
+    </Container>
   );
-};
+}; 
